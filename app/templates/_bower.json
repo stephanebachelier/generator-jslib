@@ -1,6 +1,7 @@
 {
   "name": "<%= libname %>",
   "version": "0.0.0",
+  "description": "<%= description %>",
   "author": {
     "name": "<%= authorName %>",
     "email": "<%= authorEmail %>"

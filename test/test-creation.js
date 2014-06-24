@@ -41,14 +41,17 @@ describe('jslib generator', function () {
       ['bower.json', /"name": "Obi Wan Kenobi"/],
       ['bower.json', /"email": "obi@theforce.stars"/],
       ['bower.json', /"license": "WTFL"/],
+      ['bower.json', /"description": "foo"/],
       ['package.json', /"name": "jslib"/],
       ['package.json', /"name": "Obi Wan Kenobi"/],
       ['package.json', /"email": "obi@theforce.stars"/],
       ['package.json', /"license": "WTFL"/],
+      ['package.json', /"description": "foo"/]
     ];
 
     helpers.mockPrompt(this.app, {
       'libname': 'jslib',
+      'description': 'foo',
       'authorName': 'Obi Wan Kenobi',
       'authorEmail': 'obi@theforce.stars',
       'license': 'WTFL'
