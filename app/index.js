@@ -43,11 +43,17 @@ var JslibGenerator = yeoman.generators.Base.extend({
       name: 'authorEmail',
       message: 'Author email ?',
       default: this.gitConfig.user.email || ''
+    },
+    {
+      name: 'license',
+      message: 'License',
+      default: 'MIT'
     }];
 
     this.prompt(prompts, function (props) {
       this.libname = props.libname.replace(/\s+/g, '');
       this.author = helper.formatAuthor(props);
+      this.license = props.license.replace(/\s+/g, '');
 
       done();
     }.bind(this));

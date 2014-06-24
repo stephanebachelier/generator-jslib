@@ -4,5 +4,6 @@
   "author": {
   <%= author %>
   },
+  "license": "<%= license %>",
   "dependencies": {}
 }
