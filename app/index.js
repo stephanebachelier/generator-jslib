@@ -26,6 +26,11 @@ var JslibGenerator = yeoman.generators.Base.extend({
     var splitPath = process.cwd().split('/');
     var dirname   = splitPath[splitPath.length-1];
 
+    // username
+    if (process.env != undefined && process.env['USER'] != undefined) {
+      this.username = process.env['USER'];
+    }
+
     var prompts = [{
       name: 'libname',
       message: 'What is the name of your library?',
@@ -50,6 +55,11 @@ var JslibGenerator = yeoman.generators.Base.extend({
       name: 'license',
       message: 'License',
       default: 'MIT'
+    },
+    {
+      name: 'username',
+      message: 'Git username',
+      default: this.username || ''
     }];
 
     this.prompt(prompts, function (props) {
@@ -58,6 +68,7 @@ var JslibGenerator = yeoman.generators.Base.extend({
       this.authorName = props.authorName;
       this.authorEmail = props.authorEmail;
       this.license = props.license.replace(/\s+/g, '');
+      this.username = props.username.replace(/\s+/g, '');
 
       done();
     }.bind(this));
@@ -70,6 +81,7 @@ var JslibGenerator = yeoman.generators.Base.extend({
 
     this.template('_package.json',  'package.json');
     this.template('_bower.json',    'bower.json');
+    this.template('README.md',      'README.md');
     this.template('lib.js',         'lib/' + this.libname + '.js');
   },
 

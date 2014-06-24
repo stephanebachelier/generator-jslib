@@ -46,7 +46,8 @@ describe('jslib generator', function () {
       ['package.json', /"name": "Obi Wan Kenobi"/],
       ['package.json', /"email": "obi@theforce.stars"/],
       ['package.json', /"license": "WTFL"/],
-      ['package.json', /"description": "foo"/]
+      ['package.json', /"description": "foo"/],
+      ['README.md', /https:\/\/secure.travis-ci.org\/foobar\/jslib/]
     ];
 
     helpers.mockPrompt(this.app, {
@@ -54,7 +55,8 @@ describe('jslib generator', function () {
       'description': 'foo',
       'authorName': 'Obi Wan Kenobi',
       'authorEmail': 'obi@theforce.stars',
-      'license': 'WTFL'
+      'license': 'WTFL',
+      'username': 'foobar'
     });
 
     this.app.options['skip-install'] = true;
