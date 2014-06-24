@@ -24,7 +24,9 @@ describe('jslib generator', function () {
       '.jshintrc',
       '.editorconfig',
       '.gitignore',
-      '.jscs.json'
+      '.jscs.json',
+      'dist',
+      'lib'
     ];
 
     var expectedContent = [
