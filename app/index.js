@@ -68,6 +68,8 @@ var JslibGenerator = yeoman.generators.Base.extend({
     this.copy('_gitignore', '.gitignore');
     this.copy('_jshintrc', '.jshintrc');
     this.copy('_jscs.json', '.jscs.json');
+    this.copy('Gruntfile.js', 'Gruntfile.js');
+    this.directory('tasks', 'tasks');
   }
 });
 

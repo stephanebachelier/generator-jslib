@@ -1,0 +1,8 @@
+default:
+  - build
+  
+build:
+  - jshint
+  - jscs
+  - concat
+  - uglify

@@ -25,8 +25,15 @@ describe('jslib generator', function () {
       '.editorconfig',
       '.gitignore',
       '.jscs.json',
+      'Gruntfile.js',
       'dist',
-      'lib/jslib.js'
+      'lib/jslib.js',
+      'tasks/aliases.yaml',
+      'tasks/concat.js',
+      'tasks/jscs.js',
+      'tasks/jshint.js',
+      'tasks/uglify.js',
+      'tasks/watch.js'
     ];
 
     var expectedContent = [
