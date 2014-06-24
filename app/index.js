@@ -4,11 +4,13 @@ var path = require('path');
 var yeoman = require('yeoman-generator');
 var yosay = require('yosay');
 var chalk = require('chalk');
-
+var gitConfig = require('git-config');
+var helper = require('./helper');
 
 var JslibGenerator = yeoman.generators.Base.extend({
   init: function () {
     this.pkg = require('../package.json');
+    this.gitConfig = gitConfig.sync();
 
     this.on('end', function () {
       if (!this.options['skip-install']) {
@@ -31,10 +33,21 @@ var JslibGenerator = yeoman.generators.Base.extend({
       name: 'libname',
       message: 'What is the name of your library?',
       default: dirname
+    },
+    {
+      name: 'authorName',
+      message: 'Author name ?',
+      default: this.gitConfig.user.name || ''
+    },
+    {
+      name: 'authorEmail',
+      message: 'Author email ?',
+      default: this.gitConfig.user.email || ''
     }];
 
     this.prompt(prompts, function (props) {
       this.libname = props.libname.replace(/\s+/g, '');
+      this.author = helper.formatAuthor(props);
 
       done();
     }.bind(this));
