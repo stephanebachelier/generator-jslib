@@ -24,11 +24,11 @@ var JslibGenerator = yeoman.generators.Base.extend({
 
     // dirname
     var splitPath = process.cwd().split('/');
-    var dirname   = splitPath[splitPath.length-1];
+    var dirname   = splitPath[splitPath.length - 1];
 
     // username
-    if (process.env != undefined && process.env['USER'] != undefined) {
-      this.username = process.env['USER'];
+    if (process.env != undefined && process.env.USER != undefined) {
+      this.username = process.env.USER;
     }
 
     var prompts = [{
@@ -83,7 +83,6 @@ var JslibGenerator = yeoman.generators.Base.extend({
   app: function () {
     this.mkdir('lib');
     this.mkdir('dist');
-
 
     this.template('_package.json',  'package.json');
     this.template('_bower.json',    'bower.json');

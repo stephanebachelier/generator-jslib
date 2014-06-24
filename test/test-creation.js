@@ -59,13 +59,13 @@ describe('jslib generator', function () {
     ];
 
     helpers.mockPrompt(this.app, {
-      'libname': 'jslib',
-      'description': 'foo',
-      'authorName': 'Obi Wan Kenobi',
-      'authorEmail': 'obi@theforce.stars',
-      'license': 'WTFL',
-      'username': 'foobar',
-      'repository': 'bar/jslib'
+      libname: 'jslib',
+      description: 'foo',
+      authorName: 'Obi Wan Kenobi',
+      authorEmail: 'obi@theforce.stars',
+      license: 'WTFL',
+      username: 'foobar',
+      repository: 'bar/jslib'
     });
 
     this.app.options['skip-install'] = true;
