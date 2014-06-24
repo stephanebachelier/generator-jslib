@@ -23,15 +23,18 @@ var JslibGenerator = yeoman.generators.Base.extend({
     // Have Yeoman greet the user.
     this.log(yosay('Welcome to the marvelous Jslib generator!'));
 
+    // dirname
+    var splitPath = process.cwd().split('/');
+    var dirname   = splitPath[splitPath.length-1];
+
     var prompts = [{
-      type: 'confirm',
-      name: 'someOption',
-      message: 'Would you like to enable this option?',
-      default: true
+      name: 'libname',
+      message: 'What is the name of your library?',
+      default: dirname
     }];
 
     this.prompt(prompts, function (props) {
-      this.someOption = props.someOption;
+      this.libname = props.libname.replace(/\s+/g, '');
 
       done();
     }.bind(this));
@@ -39,9 +42,11 @@ var JslibGenerator = yeoman.generators.Base.extend({
 
   app: function () {
     this.mkdir('lib');
+    this.mkdir('dist');
 
-    this.copy('_package.json', 'package.json');
-    this.copy('_bower.json', 'bower.json');
+
+    this.template('_package.json',  'package.json');
+    this.template('_bower.json',    'bower.json');
   },
 
   projectfiles: function () {

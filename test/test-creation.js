@@ -2,6 +2,7 @@
 'use strict';
 var path = require('path');
 var helpers = require('yeoman-generator').test;
+var assert = require('yeoman-generator').assert;
 
 describe('jslib generator', function () {
   beforeEach(function (done) {
@@ -24,12 +25,19 @@ describe('jslib generator', function () {
       '.editorconfig'
     ];
 
+    var expectedContent = [
+      ['bower.json', /"name": "jslib"/],
+      ['package.json', /"name": "jslib"/]
+    ];
+
     helpers.mockPrompt(this.app, {
-      'someOption': true
+      'libname': 'jslib'
     });
     this.app.options['skip-install'] = true;
+
     this.app.run({}, function () {
-      helpers.assertFile(expected);
+      assert.file(expected);
+      assert.fileContent(expectedContent);
       done();
     });
   });
