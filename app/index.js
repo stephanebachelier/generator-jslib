@@ -50,9 +50,10 @@ var JslibGenerator = yeoman.generators.Base.extend({
   },
 
   projectfiles: function () {
-    this.copy('editorconfig', '.editorconfig');
-    this.copy('jshintrc', '.jshintrc');
-    this.copy('jshintrc', '.jshintrc');
+    this.copy('_editorconfig', '.editorconfig');
+    this.copy('_gitignore', '.gitignore');
+    this.copy('_jshintrc', '.jshintrc');
+    this.copy('_jscs.json', '.jscs.json');
   }
 });
 

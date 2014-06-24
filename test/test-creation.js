@@ -22,7 +22,9 @@ describe('jslib generator', function () {
     var expected = [
       // add files you expect to exist here.
       '.jshintrc',
-      '.editorconfig'
+      '.editorconfig',
+      '.gitignore',
+      '.jscs.json'
     ];
 
     var expectedContent = [
