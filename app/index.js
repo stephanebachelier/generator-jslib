@@ -47,6 +47,7 @@ var JslibGenerator = yeoman.generators.Base.extend({
 
     this.template('_package.json',  'package.json');
     this.template('_bower.json',    'bower.json');
+    this.template('lib.js',         'lib/' + this.libname + '.js');
   },
 
   projectfiles: function () {
