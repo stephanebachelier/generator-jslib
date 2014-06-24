@@ -60,6 +60,11 @@ var JslibGenerator = yeoman.generators.Base.extend({
       name: 'username',
       message: 'Git username',
       default: this.username || ''
+    },
+    {
+      name: 'repository',
+      message: 'Git repository',
+      default: this.username ? this.username + '/' + this.libname : ''
     }];
 
     this.prompt(prompts, function (props) {
@@ -69,6 +74,7 @@ var JslibGenerator = yeoman.generators.Base.extend({
       this.authorEmail = props.authorEmail;
       this.license = props.license.replace(/\s+/g, '');
       this.username = props.username.replace(/\s+/g, '');
+      this.repository = props.repository.replace(/\s+/g, '');
 
       done();
     }.bind(this));

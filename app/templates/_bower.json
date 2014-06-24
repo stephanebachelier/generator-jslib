@@ -6,6 +6,7 @@
     "name": "<%= authorName %>",
     "email": "<%= authorEmail %>"
   },
+  "repository": "<%= repository %>",
   "license": "<%= license %>",
   "dependencies": {}
 }

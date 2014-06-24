@@ -6,6 +6,7 @@
     "name": "<%= authorName %>",
     "email": "<%= authorEmail %>"
   },
+  "repository": "<%= repository %>",
   "license": "<%= license %>",
   "engines": {
     "node": ">= 0.10.0"

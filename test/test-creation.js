@@ -38,15 +38,23 @@ describe('jslib generator', function () {
 
     var expectedContent = [
       ['bower.json', /"name": "jslib"/],
-      ['bower.json', /"name": "Obi Wan Kenobi"/],
-      ['bower.json', /"email": "obi@theforce.stars"/],
-      ['bower.json', /"license": "WTFL"/],
-      ['bower.json', /"description": "foo"/],
       ['package.json', /"name": "jslib"/],
+      // author name
+      ['bower.json', /"name": "Obi Wan Kenobi"/],
       ['package.json', /"name": "Obi Wan Kenobi"/],
+      // author email
+      ['bower.json', /"email": "obi@theforce.stars"/],
       ['package.json', /"email": "obi@theforce.stars"/],
+      // license
+      ['bower.json', /"license": "WTFL"/],
       ['package.json', /"license": "WTFL"/],
+      // description
+      ['bower.json', /"description": "foo"/],
       ['package.json', /"description": "foo"/],
+      // description
+      ['bower.json', /"repository": "bar\/jslib"/],
+      ['package.json', /"repository": "bar\/jslib"/],
+      // README
       ['README.md', /https:\/\/secure.travis-ci.org\/foobar\/jslib/]
     ];
 
@@ -56,7 +64,8 @@ describe('jslib generator', function () {
       'authorName': 'Obi Wan Kenobi',
       'authorEmail': 'obi@theforce.stars',
       'license': 'WTFL',
-      'username': 'foobar'
+      'username': 'foobar',
+      'repository': 'bar/jslib'
     });
 
     this.app.options['skip-install'] = true;
