@@ -28,7 +28,6 @@
     "yosay": "^0.1.0"
   },
   "devDependencies": {
-    "git-config": "0.0.6",
     "mocha": "*"
   },
   "peerDependencies": {

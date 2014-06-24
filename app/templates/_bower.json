@@ -2,7 +2,8 @@
   "name": "<%= libname %>",
   "version": "0.0.0",
   "author": {
-  <%= author %>
+    "name": "<%= authorName %>",
+    "email": "<%= authorEmail %>"
   },
   "license": "<%= license %>",
   "dependencies": {}
