@@ -4,7 +4,7 @@ module.exports = {
     reporter: require('jshint-stylish')
   },
   gruntfile: {
-    src: 'Gruntfile.js'
+    src: ['Gruntfile.js', 'tasks/{,*/}*.js']
   },
   lib: {
     src: ['lib/<%= pkg.name %>.js']
