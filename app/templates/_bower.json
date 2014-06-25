@@ -9,5 +9,12 @@
   },
   "repository": "<%= repository %>",
   "license": "<%= license %>",
-  "dependencies": {}
+  "dependencies": {},
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
 }
