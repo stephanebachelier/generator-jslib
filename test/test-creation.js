@@ -25,6 +25,7 @@ describe('jslib generator', function () {
       '.editorconfig',
       '.gitignore',
       '.jscs.json',
+      '.travis.yml',
       'Gruntfile.js',
       'dist',
       'lib/jslib.js',
