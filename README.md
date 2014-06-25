@@ -20,6 +20,31 @@ Finally, initiate the generator:
 $ yo jslib
 ```
 
+## Layout
+
+Clearly inspired by [generator-microlib](https://github.com/asbjornenge/generator-microlib/blob/master/README.md#included)
+
+```
+	|- mylib
+	   |- .editorconfig      // Example .editorconfig (http://editorconfig.org/)
+	   |- .gitignore         // Basic .gitignore
+	   |- .jshintrc          // Example JSHint configuration (http://www.jshint.com/docs/)
+	   |- .travis.yml        // Example Travis configuration (http://www.travis-ci.org/)
+	   |- Grunfile.js        // Basic Grunt configuration
+	   |- README.md          // Empty README file
+	   |- bower.json         // Basic Bower configuration
+	   |- package.json       // Basic Npm configuration
+	   |- dist               // Folder for your distributables
+          |- <lib>.min.js
+	   |- lib                // Folder for your library !!
+          |- <lib>.js
+	   |- tests              // Folder for your tests
+          |- <test>.js
+	   |- tasks              // Folder for your tasks
+          |- aliases.yaml  // Tasks aliases
+          |- <task>.js     // task description
+```
+
 ## Why
 
 ### others generators
