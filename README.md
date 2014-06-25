@@ -37,9 +37,22 @@ This generator, is closer to `generator-microlib`.
 My motivation to create another generator is because I always use:
  - grunt with a split configuration which gives me a small Gruntfile with short tasks
  - bower
+ - linting with jshint and jscs
  - karma + mocha for testing
  - and have fun with new generator API :)
 
+
+### Grunt configuration
+
+No more tasks description in `Gruntfile.js` which leads IMHO to unmaintainable grunt tasks. All the tasks are defined in their own files and tasks aliases are created and maintained in one file.
+I've used this workflow for near one year for multiple projects and it works really well.
+
+Inspired from [Thomas Boyt's "More Maintainable Gruntfiles"](http://www.thomasboyt.com/2013/09/01/maintainable-grunt.html) blog post which led to the `load-grunt-config` task. Use with `jit-grunt` which give you Just In Time task loading, Grunt is really speedy. Probably not as speedy than gulp but with the power of a world of powerful plugins.
+
+So this project use at his heart:
+
+* [load-grunt-config](http://firstandthird.github.io/load-grunt-config)
+* [jit-grunt](https://github.com/shootaroo/jit-grunt)
 
 ## License
 
