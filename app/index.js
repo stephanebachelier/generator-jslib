@@ -64,7 +64,7 @@ var JslibGenerator = yeoman.generators.Base.extend({
     {
       name: 'repository',
       message: 'Git repository',
-      default: this.username ? this.username + '/' + this.libname : ''
+      default: this.username ? this.username + '/' + dirname : ''
     }];
 
     this.prompt(prompts, function (props) {
