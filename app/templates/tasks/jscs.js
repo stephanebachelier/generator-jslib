@@ -5,5 +5,5 @@ module.exports = {
   },
   lib: ['lib/<%%= pkg.name %>.js'],
   test: ['test/spec/{,*/}*.js'],
-  grunt: ['Gruntfile.js', 'tasks/{,*/}*.js']
+  gruntfile: ['Gruntfile.js', 'tasks/{,*/}*.js']
 };
