@@ -1,8 +1,9 @@
 default:
   - build
-  
+
 build:
-  - jshint
-  - jscs
+  - jshint:lib
+  - jscs:lib
+  - lintspaces:lib
   - concat
   - uglify
