@@ -9,8 +9,7 @@ module.exports = {
   lib: {
     files: '<%%= jshint.lib.src %>',
     tasks: [
-      'jshint:lib',
-      'jscs:lib'
+      'build'
     ]
   },
   test: {
