@@ -3,7 +3,7 @@ module.exports = {
     preset: 'google',
     config: '.jscs.json'
   },
-  lib: ['lib/<%= pkg.name %>.js'],
+  lib: ['lib/<%%= pkg.name %>.js'],
   test: ['test/spec/{,*/}*.js'],
   grunt: ['Gruntfile.js', 'tasks/{,*/}*.js']
 };

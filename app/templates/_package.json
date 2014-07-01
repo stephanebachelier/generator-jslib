@@ -21,9 +21,9 @@
     "grunt-contrib-watch": "^0.6.1",
     "grunt-jscs-checker": "^0.6.0",
     "grunt-lintspaces": "^0.5.1",
-    "grunt-preprocess": "^4.0.0",
     "jit-grunt": "^0.7.0",
     "jshint-stylish": "^0.2.0",
-    "load-grunt-config": "^0.10.0"
+    "load-grunt-config": "^0.10.0",
+    "grunt-umd": "^1.7.4"
   }
 }

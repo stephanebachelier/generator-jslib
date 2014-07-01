@@ -1,10 +1,10 @@
 module.exports = {
   options: {
-    banner: '<%= banner %>',
+    banner: '<%%= banner %>',
     stripBanners: true
   },
   dist: {
-    src: ['lib/<%= pkg.name %>.js'],
-    dest: 'dist/<%= pkg.name %>.js'
+    src: ['lib/<%%= pkg.name %>.js'],
+    dest: 'dist/<%%= pkg.name %>.js'
   }
 };
