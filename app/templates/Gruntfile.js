@@ -2,6 +2,8 @@
 module.exports = function (grunt) {
   'use strict';
 
+  require('time-grunt')(grunt);
+  
   var config = {
     // Metadata.
     pkg: grunt.file.readJSON('package.json'),
