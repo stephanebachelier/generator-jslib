@@ -19,6 +19,7 @@
     "grunt-contrib-jshint": "^0.10.0",
     "grunt-contrib-uglify": "^0.5.0",
     "grunt-contrib-watch": "^0.6.1",
+    "grunt-contrib-clean": "^0.5.0",
     "grunt-jscs": "^0.6.1",
     "grunt-lintspaces": "^0.5.1",
     "jit-grunt": "^0.7.0",
