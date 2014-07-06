@@ -21,7 +21,6 @@ module.exports = function (grunt) {
     configPath: path.join(process.cwd(), 'tasks'),
     config: config,
     jitGrunt: {
-      jscs: 'grunt-jscs-checker',
       changelog: 'grunt-conventional-changelog'
     }
   });
