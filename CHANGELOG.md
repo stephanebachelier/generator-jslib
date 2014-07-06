@@ -1,3 +1,18 @@
+### 0.1.7 (2014-07-06)
+
+
+#### Bug Fixes
+
+* **jscs:** grunt-jscs-checker changed to grunt-jscs ([fb28f124](https://github.com/stephanebachelier/generator-jslib/commit/fb28f1246ecc4f72e570e2e4d1ecb9e761e4a954))
+* **package:** add missing time-grunt dependency ([96a7b64c](https://github.com/stephanebachelier/generator-jslib/commit/96a7b64c6efd9b90f8f0596e9fab8357d718b1df))
+
+
+#### Features
+
+* **changelog:** add grunt-conventional-changelog ([22f0fa23](https://github.com/stephanebachelier/generator-jslib/commit/22f0fa2389d31abaa1240ddf3335527120c7fed2))
+* **doc:** add a  task to generate doc ([bc0d055e](https://github.com/stephanebachelier/generator-jslib/commit/bc0d055eedf84886202fdf6715c460a1e9fb7b12))
+
+
 ### 0.1.6 (2014-07-01)
 
 
