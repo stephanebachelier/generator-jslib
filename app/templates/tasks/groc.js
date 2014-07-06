@@ -1,7 +1,7 @@
 module.exports = {
   groc: {
     files: {
-      src: ['lib/<%%= pkg.name %>.js']
+      src: ['lib/**/*.js']
     },
     options: {
       out: 'docs/'
