@@ -1,3 +1,33 @@
+### 0.1.9 (2014-08-09)
+
+
+#### Bug Fixes
+
+* **main:** use the sanitized name for lib file ([108f13de](https://github.com/stephanebachelier/generator-jslib/commit/108f13de2d024a6e0ffc6c4b55716d11c8c426b9))
+* **repository.url:** append .git for proposed url ([0d2e4002](https://github.com/stephanebachelier/generator-jslib/commit/0d2e400277da54b34deb64b84e6a592f0a85ca71))
+* **typo:**
+  * syntax error while using wrong quote ([f8e7895e](https://github.com/stephanebachelier/generator-jslib/commit/f8e7895ef52bf2c35025b605aedd63c7f0fe0ded))
+  * the old joke from copy/paste ([f79ba947](https://github.com/stephanebachelier/generator-jslib/commit/f79ba947bc1a3cb01b03c80784b8d6fe98c6f2f1))
+
+### 0.1.8 (2014-08-09)
+
+
+#### Bug Fixes
+
+* **libname:** remove .js from package name ([40a8d4f6](https://github.com/stephanebachelier/generator-jslib/commit/40a8d4f64b620d8bfd00ad37bf7f372f8f385d57))
+* **sourcepath:** search for all subdirectories in ([6ee4bc53](https://github.com/stephanebachelier/generator-jslib/commit/6ee4bc5353749234ef8bc4809a16a72fd3366a12))
+
+
+#### Features
+
+* **README:** add a skeleton for library README ([a2ed2920](https://github.com/stephanebachelier/generator-jslib/commit/a2ed2920b8d81f66826fa387cceb529113803e12))
+* **clean:** add grunt task for cleaning ([d626cec4](https://github.com/stephanebachelier/generator-jslib/commit/d626cec4a4485d4e52be654ab7067aa18fbc3a55))
+* **jscs:** add jscs yoda and comment rules ([6ab81292](https://github.com/stephanebachelier/generator-jslib/commit/6ab81292ba474c90ae3117d76d3bab5ac5da88eb))
+* **jshint:** add more rules ([f83683c2](https://github.com/stephanebachelier/generator-jslib/commit/f83683c2233525586d5713b0473ab3a608e13032))
+* **pkg.name:** whitelist package name ([d8e3b8b5](https://github.com/stephanebachelier/generator-jslib/commit/d8e3b8b5e916714b95d21785590604d9fa44626f))
+* **repository:** use an object instead of a string ([1503ab63](https://github.com/stephanebachelier/generator-jslib/commit/1503ab63517bc236826de2c4759a80c6f631c148))
+
+
 ### 0.1.7 (2014-07-06)
 
 
