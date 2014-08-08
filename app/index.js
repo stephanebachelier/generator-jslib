@@ -65,7 +65,7 @@ var JslibGenerator = yeoman.generators.Base.extend({
     {
       name: 'repositoryUrl',
       message: 'repository url',
-      default: this.username ? 'https://github.com/' + this.username + '/' + dirname : ''
+      default: this.username ? 'https://github.com/' + this.username + '/' + dirname + '.git': ''
     },
     {
       name: 'repositoryType',
