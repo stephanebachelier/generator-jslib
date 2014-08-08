@@ -3,6 +3,7 @@
 var path = require('path');
 var helpers = require('yeoman-generator').test;
 var assert = require('yeoman-generator').assert;
+var fs = require("fs");
 
 describe('jslib generator', function () {
   beforeEach(function (done) {
@@ -132,6 +133,26 @@ describe('jslib generator', function () {
     this.app.run({}, function () {
       assert.file(expected);
       assert.fileContent(expectedContent);
+      done();
+    });
+  });
+
+  it.only('should create valid json files', function (done) {
+    helpers.mockPrompt(this.app, {
+      libname: 'lib"·$%&()/\=¿?¡!^`+*ñ¨Ç´ç;,:-_0123456789.js',
+    });
+
+    this.app.options['skip-install'] = true;
+
+    this.app.run({}, function () {
+      require(path.join(__dirname, 'temp', 'package.json'));
+      require(path.join(__dirname, 'temp', 'bower.json'));
+      require(path.join(__dirname, 'temp', '.jscs.json'));
+      // can't require('json like file without ending by .json')
+      var jshint = fs.readFileSync(path.join(__dirname, 'temp', '.jshintrc'), 'utf8');
+      assert.doesNotThrow(function () {
+        JSON.parse(jshint);
+      });
       done();
     });
   });
