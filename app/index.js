@@ -4,6 +4,7 @@ var path = require('path');
 var yeoman = require('yeoman-generator');
 var yosay = require('yosay');
 var chalk = require('chalk');
+var validator = require('validator');
 
 var JslibGenerator = yeoman.generators.Base.extend({
   init: function () {
@@ -73,15 +74,16 @@ var JslibGenerator = yeoman.generators.Base.extend({
     }];
 
     this.prompt(prompts, function (props) {
-      this.libname = props.libname.replace(/\s+/g, '');
+      // whitelist all chars in [a-zA-Z0-9\-_\.] range.
+      this.libname = validator.whitelist(validator.trim(props.libname), 'a-zA-Z0-9\-_\.');
       this.name = this.libname.replace(/\.js$/g, '');
       this.description = props.description;
       this.authorName = props.authorName;
       this.authorEmail = props.authorEmail;
-      this.license = props.license.replace(/\s+/g, '');
-      this.username = props.username.replace(/\s+/g, '');
-      this.repositoryUrl = props.repositoryUrl.replace(/\s+/g, '');
-      this.repositoryType =  props.repositoryUrl.replace(/\s+/g, '');
+      this.license =  validator.trim(props.license);
+      this.username =  validator.trim(props.username);
+      this.repositoryUrl =  validator.trim(props.repositoryUrl);
+      this.repositoryType =  validator.trim(props.repositoryUrl);
       done();
     }.bind(this));
   },
