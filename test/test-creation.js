@@ -81,4 +81,31 @@ describe('jslib generator', function () {
       done();
     });
   });
+
+  it('validate library name ending in .js', function (done) {
+    var expected = [
+      'lib/jslib.js'
+    ];
+
+    var expectedContent = [
+      // library name
+      ['bower.json', /"name": "jslib.js"/],
+      ['package.json', /"name": "jslib.js"/],
+      // main entry file
+      ['bower.json', /"main": "dist\/jslib.js"/],
+      ['package.json', /"main": "dist\/jslib.js"/],
+    ];
+
+    helpers.mockPrompt(this.app, {
+      libname: 'jslib.js',
+    });
+
+    this.app.options['skip-install'] = true;
+
+    this.app.run({}, function () {
+      assert.file(expected);
+      assert.fileContent(expectedContent);
+      done();
+    });
+  });
 });
