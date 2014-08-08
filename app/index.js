@@ -95,7 +95,7 @@ var JslibGenerator = yeoman.generators.Base.extend({
     this.template('_package.json',  'package.json');
     this.template('_bower.json',    'bower.json');
     this.template('README.md',      'README.md');
-    this.template('lib.js',         'lib/' + this.libname + '.js');
+    this.template('lib.js',         'lib/' + this.name + '.js');
   },
 
   projectfiles: function () {
