@@ -137,7 +137,7 @@ describe('jslib generator', function () {
     });
   });
 
-  it.only('should create valid json files', function (done) {
+  it('should create valid json files', function (done) {
     helpers.mockPrompt(this.app, {
       libname: 'lib"·$%&()/\=¿?¡!^`+*ñ¨Ç´ç;,:-_0123456789.js',
     });
