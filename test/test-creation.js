@@ -52,9 +52,12 @@ describe('jslib generator', function () {
       // description
       ['bower.json', /"description": "foo"/],
       ['package.json', /"description": "foo"/],
-      // description
-      ['bower.json', /"repository": "bar\/jslib"/],
-      ['package.json', /"repository": "bar\/jslib"/],
+      // repository url
+      ['bower.json', /"url": "https:\/\/github.com\/bar\/jslib\.git"/],
+      ['package.json', /"url": "https:\/\/github.com\/bar\/jslib\.git"/],
+      // repository type
+      ['bower.json', /"type": "git"/],
+      ['package.json', /"type": "git"/],
       // README
       ['README.md', /https:\/\/secure.travis-ci.org\/foobar\/jslib/]
     ];
@@ -66,7 +69,8 @@ describe('jslib generator', function () {
       authorEmail: 'obi@theforce.stars',
       license: 'WTFL',
       username: 'foobar',
-      repository: 'bar/jslib'
+      repositoryUrl: 'https://github.com/bar/jslib.git',
+      repositoryType: 'git',
     });
 
     this.app.options['skip-install'] = true;
