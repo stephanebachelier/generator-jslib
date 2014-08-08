@@ -83,7 +83,7 @@ var JslibGenerator = yeoman.generators.Base.extend({
       this.license =  validator.trim(props.license);
       this.username =  validator.trim(props.username);
       this.repositoryUrl =  validator.trim(props.repositoryUrl);
-      this.repositoryType =  validator.trim(props.repositoryUrl);
+      this.repositoryType =  validator.trim(props.repositoryType);
       done();
     }.bind(this));
   },
