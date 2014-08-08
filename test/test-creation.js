@@ -108,4 +108,31 @@ describe('jslib generator', function () {
       done();
     });
   });
+
+  it('library name sanitization should works', function (done) {
+    var expected = [
+      'lib/lib-_0123456789.js'
+    ];
+
+    var expectedContent = [
+      // library name
+      ['bower.json', /"name": "lib-_0123456789.js"/],
+      ['package.json', /"name": "lib-_0123456789.js"/],
+      // main entry file
+      ['bower.json', /"main": "dist\/lib-_0123456789.js"/],
+      ['package.json', /"main": "dist\/lib-_0123456789.js"/],
+    ];
+
+    helpers.mockPrompt(this.app, {
+      libname: 'lib"·$%&()/\=¿?¡!^`+*ñ¨Ç´ç;,:-_0123456789.js',
+    });
+
+    this.app.options['skip-install'] = true;
+
+    this.app.run({}, function () {
+      assert.file(expected);
+      assert.fileContent(expectedContent);
+      done();
+    });
+  });
 });
