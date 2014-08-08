@@ -4,6 +4,6 @@ module.exports = {
   },
   dist: {
     src: '<%%= concat.dist.dest %>',
-    dest: 'dist/<%%= pkg.name %>.min.js'
+    dest: 'dist/<%%= pkg.name.replace(/\.js$/, '') %>.min.js'
   }
 };

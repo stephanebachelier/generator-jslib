@@ -69,6 +69,7 @@ var JslibGenerator = yeoman.generators.Base.extend({
 
     this.prompt(prompts, function (props) {
       this.libname = props.libname.replace(/\s+/g, '');
+      this.name = this.libname.replace(/\.js$/g, '');
       this.description = props.description;
       this.authorName = props.authorName;
       this.authorEmail = props.authorEmail;

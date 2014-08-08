@@ -6,16 +6,16 @@
   } else if (typeof exports !== 'undefined') {
     module.exports = factory();
   } else {
-    root.<%= libname %> = factory();
+    root.<%= name %> = factory();
   }
 
 }(this, function () {
   'use strict';
 
   // code goes here
-  var <%= libname %> = function (options) {
+  var <%= name %> = function (options) {
 
   };
 
-  return <%= libname %>;
+  return <%= name %>;
 }));
