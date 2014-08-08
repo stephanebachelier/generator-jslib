@@ -62,9 +62,14 @@ var JslibGenerator = yeoman.generators.Base.extend({
       default: this.username || ''
     },
     {
-      name: 'repository',
-      message: 'Git repository',
-      default: this.username ? this.username + '/' + dirname : ''
+      name: 'repositoryUrl',
+      message: 'repository url',
+      default: this.username ? 'https://github.com/' + this.username + '/' + dirname : ''
+    },
+    {
+      name: 'repositoryType',
+      message: 'repository type',
+      default: 'git'
     }];
 
     this.prompt(prompts, function (props) {
@@ -75,8 +80,8 @@ var JslibGenerator = yeoman.generators.Base.extend({
       this.authorEmail = props.authorEmail;
       this.license = props.license.replace(/\s+/g, '');
       this.username = props.username.replace(/\s+/g, '');
-      this.repository = props.repository.replace(/\s+/g, '');
-
+      this.repositoryUrl = props.repositoryUrl.replace(/\s+/g, '');
+      this.repositoryType =  props.repositoryUrl.replace(/\s+/g, '');
       done();
     }.bind(this));
   },

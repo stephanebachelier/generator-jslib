@@ -8,7 +8,10 @@
     "name": "<%= authorName %>",
     "email": "<%= authorEmail %>"
   },
-  "repository": "<%= repository %>",
+  "repository": {
+    "url": "<%= repositoryUrl %>",
+    "type": "<%= repositoryType %>"
+  },
   "license": "<%= license %>",
   "engines": {
     "node": ">= 0.10.0"
