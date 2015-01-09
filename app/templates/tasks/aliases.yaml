@@ -7,4 +7,5 @@ build:
   - jscs:lib
   - lintspaces:lib
   - concat
+  - umd
   - uglify

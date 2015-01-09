@@ -28,7 +28,7 @@
     "jit-grunt": "^0.7.0",
     "jshint-stylish": "^0.2.0",
     "load-grunt-config": "^0.10.0",
-    "grunt-umd": "^1.7.4",
+    "grunt-umd": "^2.3.0-beta1",
     "time-grunt": "^0.3.2",
     "grunt-conventional-changelog": "^1.1.0",
     "grunt-groc": "^0.4.5"
