@@ -66,6 +66,7 @@ My motivation to create another generator is because I always use:
  - linting with jshint and jscs
  - karma + mocha for testing
  - and have fun with new generator API :)
+ - UMD wrapper
 
 
 ### Grunt configuration
