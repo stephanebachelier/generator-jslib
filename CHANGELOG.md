@@ -1,3 +1,10 @@
+### 0.2.0 (2015-01-09)
+
+
+#### Features
+
+* **umd:** switch to grunt umd for umd wrapper ([a41421ba](https://github.com/stephanebachelier/generator-jslib/commit/a41421ba1844a1c39e42333a0f0296875a1d66f7))
+
 ### 0.1.9 (2014-08-09)
 
 
