@@ -146,10 +146,8 @@
 
   "validateIndentation": 2,
 
-  "requireYodaConditions": true,
-
   "requireSpaceAfterLineComment": true,
-  
+
   "excludeFiles": ["node_modules/**", "app/bower_components/**" ]
 
 }

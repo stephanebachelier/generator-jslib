@@ -1,6 +1,5 @@
 module.exports = {
   options: {
-    preset: 'google',
     config: '.jscs.json'
   },
   lib: ['lib/**/*.js'],
