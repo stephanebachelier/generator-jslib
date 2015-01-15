@@ -1,6 +1,6 @@
 {
   "name": "generator-jslib",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Yeoman generator for javascript library",
   "license": "MIT",
   "main": "app/index.js",
