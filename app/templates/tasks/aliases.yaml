@@ -6,6 +6,6 @@ build:
   - jshint:lib
   - jscs:lib
   - lintspaces:lib
-  - concat
   - umd
+  - concat
   - uglify
