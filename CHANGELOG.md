@@ -1,3 +1,23 @@
+### 0.2.2 (2015-02-16)
+
+
+#### Bug Fixes
+
+* **editorConfig:** remove file which breaks on case-sensitive fs ([77f7db3e](https://github.com/stephanebachelier/generator-jslib/commit/77f7db3e0e267ad185082958bd90ecdeff4dd515))
+
+
+#### Features
+
+* **editorconfig:** re add editorconfig with only lowercases ([e508ccc1](https://github.com/stephanebachelier/generator-jslib/commit/e508ccc180b2d096a0dc91722a205691e8089dd3))
+* **umd:** upgrade to 2.3.0 ([987e9c2f](https://github.com/stephanebachelier/generator-jslib/commit/987e9c2fb2d84f87e8c4a95293f09047beaa1bf9))
+
+### 0.2.1 (2015-01-15)
+
+
+#### Bug Fixes
+
+* **banner:** put banner on top of umd wrapper ([bf338da9](https://github.com/stephanebachelier/generator-jslib/commit/bf338da937e47bc2acce9649ff0a24be93862ec6))
+
 ### 0.2.0 (2015-01-09)
 
 
