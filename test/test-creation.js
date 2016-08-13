@@ -27,7 +27,7 @@ describe('jslib generator', function () {
       '.travis.yml',
       'Gruntfile.js',
       'dist',
-      'lib/jslib.js',
+      'lib/main.js',
       'tasks/aliases.yaml',
       'tasks/concat.js',
       'tasks/jscs.js',
@@ -82,17 +82,13 @@ describe('jslib generator', function () {
   });
 
   it('validate library name ending in .js', function (done) {
-    var expected = [
-      'lib/jslib.js'
-    ];
-
     var expectedContent = [
       // library name
       ['bower.json', /"name": "jslib.js"/],
       ['package.json', /"name": "jslib.js"/],
       // main entry file
-      ['bower.json', /"main": "dist\/jslib.js"/],
-      ['package.json', /"main": "dist\/jslib.js"/],
+      ['bower.json', /"main": "dist\/main.js"/],
+      ['package.json', /"main": "dist\/main.js"/],
     ];
 
     helpers.mockPrompt(this.app, {
@@ -101,7 +97,6 @@ describe('jslib generator', function () {
 
     this.app.options['skip-install'] = true;
 
-      assert.file(expected);
     this.app.run(function () {
       assert.fileContent(expectedContent);
       done();
@@ -109,17 +104,13 @@ describe('jslib generator', function () {
   });
 
   it('library name sanitization should works', function (done) {
-    var expected = [
-      'lib/lib-_0123456789.js'
-    ];
-
     var expectedContent = [
       // library name
-      ['bower.json', /"name": "lib-_0123456789.js"/],
-      ['package.json', /"name": "lib-_0123456789.js"/],
+      ['bower.json', /"name": "lib-n-c-c-0123456789.js"/],
+      ['package.json', /"name": "lib-n-c-c-0123456789.js"/],
       // main entry file
-      ['bower.json', /"main": "dist\/lib-_0123456789.js"/],
-      ['package.json', /"main": "dist\/lib-_0123456789.js"/],
+      ['bower.json', /"main": "dist\/main.js"/],
+      ['package.json', /"main": "dist\/main.js"/],
     ];
 
     helpers.mockPrompt(this.app, {
@@ -128,7 +119,6 @@ describe('jslib generator', function () {
 
     this.app.options['skip-install'] = true;
 
-      assert.file(expected);
     this.app.run(function () {
       assert.fileContent(expectedContent);
       done();
