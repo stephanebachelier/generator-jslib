@@ -85,6 +85,14 @@ var JslibGenerator = yeoman.Base.extend({
       this.bulkDirectory('tasks', 'tasks');
 
     }.bind(this));
+  },
+
+  git: function () {
+    this.spawnCommandSync('git', ['init'])
+  },
+
+  install: function () {
+    this.installDependencies()
   }
 });
 
