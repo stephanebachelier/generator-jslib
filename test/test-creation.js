@@ -1,8 +1,8 @@
 /*global describe, beforeEach, it */
 'use strict';
 var path = require('path');
-var helpers = require('yeoman-generator').test;
-var assert = require('yeoman-generator').assert;
+var helpers = require('yeoman-test');
+var assert = require('yeoman-assert');
 var fs = require("fs");
 
 describe('jslib generator', function () {
@@ -76,7 +76,7 @@ describe('jslib generator', function () {
 
     this.app.options['skip-install'] = true;
 
-    this.app.run({}, function () {
+    this.app.run(function () {
       assert.file(expected);
       assert.fileContent(expectedContent);
       done();
@@ -103,8 +103,8 @@ describe('jslib generator', function () {
 
     this.app.options['skip-install'] = true;
 
-    this.app.run({}, function () {
       assert.file(expected);
+    this.app.run(function () {
       assert.fileContent(expectedContent);
       done();
     });
@@ -130,8 +130,8 @@ describe('jslib generator', function () {
 
     this.app.options['skip-install'] = true;
 
-    this.app.run({}, function () {
       assert.file(expected);
+    this.app.run(function () {
       assert.fileContent(expectedContent);
       done();
     });
@@ -144,7 +144,7 @@ describe('jslib generator', function () {
 
     this.app.options['skip-install'] = true;
 
-    this.app.run({}, function () {
+    this.app.run(function () {
       require(path.join(__dirname, 'temp', 'package.json'));
       require(path.join(__dirname, 'temp', 'bower.json'));
       require(path.join(__dirname, 'temp', '.jscs.json'));
