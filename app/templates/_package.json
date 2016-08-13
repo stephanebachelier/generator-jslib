@@ -2,7 +2,7 @@
   "name": "<%= libname %>",
   "version": "0.0.0",
   "description": "<%= description %>",
-  "main": "dist/<%= name %>.js",
+  "main": "dist/main.js",
   "readmeFilename": "README.md",
   "author": {
     "name": "<%= authorName %>",
