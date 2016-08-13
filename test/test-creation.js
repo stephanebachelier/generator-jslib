@@ -12,9 +12,7 @@ describe('jslib generator', function () {
         return done(err);
       }
 
-      this.app = helpers.createGenerator('jslib:app', [
-        '../../app'
-      ]);
+      this.app = helpers.createGenerator('jslib:app', ['../../app'], null, {skipInstall: true});
       done();
     }.bind(this));
   });
