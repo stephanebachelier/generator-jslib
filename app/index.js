@@ -1,38 +1,16 @@
 'use strict';
-var util = require('util');
-var path = require('path');
 var yeoman = require('yeoman-generator');
 var chalk = require('chalk');
-var validator = require('validator');
 var mkdirp = require('mkdirp');
+var _s = require('underscore.string');
 
 var JslibGenerator = yeoman.Base.extend({
   init: function () {
-    this.pkg = require('../package.json');
-
-    this.on('end', function () {
-      if (!this.options['skip-install']) {
-        this.installDependencies();
-      }
-    });
-  },
-
-  askFor: function () {
-    var done = this.async();
-
-    // dirname
-    var splitPath = process.cwd().split('/');
-    var dirname   = splitPath[splitPath.length - 1];
-
-    // username
-    if (process.env != undefined && process.env.USER != undefined) {
-      this.username = process.env.USER;
-    }
-
     var prompts = [{
       name: 'libname',
       message: 'What is the name of your library?',
-      default: dirname
+      default: this.appname.replace(/\s/g, '-'),
+      filter: (x) => _s.slugify(x)
     },
     {
       name: 'description',
@@ -73,37 +51,40 @@ var JslibGenerator = yeoman.Base.extend({
       default: 'git'
     }];
 
-    this.prompt(prompts, function (props) {
-      // whitelist all chars in [a-zA-Z0-9\-_\.] range.
-      this.libname = validator.whitelist(validator.trim(props.libname), 'a-zA-Z0-9\-_\.');
-      this.name = this.libname.replace(/\.js$/g, '');
-      this.description = props.description;
-      this.authorName = props.authorName;
-      this.authorEmail = props.authorEmail;
-      this.license =  validator.trim(props.license);
-      this.username =  validator.trim(props.username);
-      this.repositoryUrl =  validator.trim(props.repositoryUrl);
-      this.repositoryType =  validator.trim(props.repositoryType);
-      done();
+    return this.prompt(prompts).then(function (props) {
+      var name = _s.slugify(props.libname);
+
+      var tpl = {
+        libname: name,
+        name: name.replace(/\-js$/g, ''),
+        description: props.description,
+        authorName: props.authorName,
+        authorEmail: props.authorEmail,
+        license: _s.trim(props.license),
+        username: _s.trim(props.username),
+        repositoryUrl: _s.trim(props.repositoryUrl),
+        repositoryType: _s.trim(props.repositoryType)
+      };
+
+      mkdirp('lib');
+      mkdirp('dist');
+
+      this.template('_package.json',  'package.json', tpl);
+      this.template('_bower.json',    'bower.json', tpl);
+      this.template('README.md',      'README.md', tpl);
+      this.template('main.js',         'lib/main.js', tpl);
+
+      this.copy('_editorconfig', '.editorconfig');
+      this.copy('_gitignore', '.gitignore');
+      this.copy('_jshintrc', '.jshintrc');
+      this.copy('_jscs.json', '.jscs.json');
+      this.copy('_travis.yml', '.travis.yml');
+
+      // yeah no templating here !
+      this.bulkCopy('Gruntfile.js', 'Gruntfile.js');
+      this.bulkDirectory('tasks', 'tasks');
+
     }.bind(this));
-  },
-
-  app: function () {
-
-    this.template('_package.json',  'package.json');
-    this.template('_bower.json',    'bower.json');
-    this.template('README.md',      'README.md');
-    this.template('lib.js',         'lib/' + this.name + '.js');
-  },
-
-  projectfiles: function () {
-    this.copy('_editorconfig', '.editorconfig');
-    this.copy('_gitignore', '.gitignore');
-    this.copy('_jshintrc', '.jshintrc');
-    this.copy('_jscs.json', '.jscs.json');
-    this.copy('_travis.yml', '.travis.yml');
-    this.copy('Gruntfile.js', 'Gruntfile.js');
-    this.directory('tasks', 'tasks');
   }
 });
 
