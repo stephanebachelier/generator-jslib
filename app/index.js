@@ -2,11 +2,11 @@
 var util = require('util');
 var path = require('path');
 var yeoman = require('yeoman-generator');
-var yosay = require('yosay');
 var chalk = require('chalk');
 var validator = require('validator');
+var mkdirp = require('mkdirp');
 
-var JslibGenerator = yeoman.generators.Base.extend({
+var JslibGenerator = yeoman.Base.extend({
   init: function () {
     this.pkg = require('../package.json');
 
@@ -19,9 +19,6 @@ var JslibGenerator = yeoman.generators.Base.extend({
 
   askFor: function () {
     var done = this.async();
-
-    // Have Yeoman greet the user.
-    this.log(yosay('Welcome to the marvelous Jslib generator!'));
 
     // dirname
     var splitPath = process.cwd().split('/');
@@ -89,8 +86,6 @@ var JslibGenerator = yeoman.generators.Base.extend({
   },
 
   app: function () {
-    this.mkdir('lib');
-    this.mkdir('dist');
 
     this.template('_package.json',  'package.json');
     this.template('_bower.json',    'bower.json');
