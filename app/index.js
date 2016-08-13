@@ -42,11 +42,13 @@ var JslibGenerator = yeoman.Base.extend({
     {
       name: 'authorName',
       message: 'Author name ?',
+      store: true,
       default: this.user.git.username || ''
     },
     {
       name: 'authorEmail',
       message: 'Author email ?',
+      store: true,
       default: this.user.git.email || ''
     },
     {
@@ -57,6 +59,7 @@ var JslibGenerator = yeoman.Base.extend({
     {
       name: 'username',
       message: 'Git username',
+      store: true,
       default: this.username || ''
     },
     {
