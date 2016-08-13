@@ -1,4 +1,4 @@
-# generator-jslib [![Build Status](https://secure.travis-ci.org/stephanebachelier/generator-jslib.png?branch=master)](https://travis-ci.org/stephanebachelier/generator-jslib)
+# generator-jslib [![Build Status](https://travis-ci.org/stephanebachelier/generator-jslib.svg?branch=master)](https://travis-ci.org/stephanebachelier/generator-jslib)
 
 This is another generator to build javascript library, mainly for the browser with the usage of UMD wrapper.
 
