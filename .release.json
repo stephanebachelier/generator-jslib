@@ -1,12 +1,8 @@
 {
     "verbose": true,
     "pkgFiles": ["package.json"],
-    "commitMessage": "Release %s",
+    "commitMessage": "chore(release): %s",
     "tagName": "%s",
     "tagAnnotation": "Release %s",
-    "distBase": "dist",
-    "distFiles": {
-      "dist": ["**/*"]
-    },
     "publish": true
 }
