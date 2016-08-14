@@ -1,21 +1,21 @@
 /*global describe, beforeEach, it */
-'use strict';
-var path = require('path');
-var helpers = require('yeoman-test');
-var assert = require('yeoman-assert');
-var fs = require("fs");
+'use strict'
+var path = require('path')
+var helpers = require('yeoman-test')
+var assert = require('yeoman-assert')
+var fs = require('fs')
 
 describe('jslib generator', function () {
   beforeEach(function (done) {
     helpers.testDirectory(path.join(__dirname, 'temp'), function (err) {
       if (err) {
-        return done(err);
+        return done(err)
       }
 
-      this.app = helpers.createGenerator('jslib:app', ['../../app'], null, {skipInstall: true});
-      done();
-    }.bind(this));
-  });
+      this.app = helpers.createGenerator('jslib:app', ['../../app'], null, {skipInstall: true})
+      done()
+    }.bind(this))
+  })
 
   it('creates expected files', function (done) {
     var expected = [
@@ -31,7 +31,7 @@ describe('jslib generator', function () {
       'tasks/standard.js',
       'tasks/uglify.js',
       'tasks/watch.js'
-    ];
+    ]
 
     var expectedContent = [
       ['bower.json', /"name": "jslib"/],
@@ -56,7 +56,7 @@ describe('jslib generator', function () {
       ['package.json', /"type": "git"/],
       // README
       ['README.md', /https:\/\/secure.travis-ci.org\/foobar\/jslib/]
-    ];
+    ]
 
     helpers.mockPrompt(this.app, {
       libname: 'jslib',
@@ -66,17 +66,17 @@ describe('jslib generator', function () {
       license: 'WTFL',
       username: 'foobar',
       repositoryUrl: 'https://github.com/bar/jslib.git',
-      repositoryType: 'git',
-    });
+      repositoryType: 'git'
+    })
 
-    this.app.options['skip-install'] = true;
+    this.app.options['skip-install'] = true
 
     this.app.run(function () {
-      assert.file(expected);
-      assert.fileContent(expectedContent);
-      done();
-    });
-  });
+      assert.file(expected)
+      assert.fileContent(expectedContent)
+      done()
+    })
+  })
 
   it('validate library name ending in .js', function (done) {
     var expectedContent = [
@@ -85,20 +85,20 @@ describe('jslib generator', function () {
       ['package.json', /"name": "jslib.js"/],
       // main entry file
       ['bower.json', /"main": "dist\/main.js"/],
-      ['package.json', /"main": "dist\/main.js"/],
-    ];
+      ['package.json', /"main": "dist\/main.js"/]
+    ]
 
     helpers.mockPrompt(this.app, {
-      libname: 'jslib.js',
-    });
+      libname: 'jslib.js'
+    })
 
-    this.app.options['skip-install'] = true;
+    this.app.options['skip-install'] = true
 
     this.app.run(function () {
-      assert.fileContent(expectedContent);
-      done();
-    });
-  });
+      assert.fileContent(expectedContent)
+      done()
+    })
+  })
 
   it('library name sanitization should works', function (done) {
     var expectedContent = [
@@ -107,38 +107,38 @@ describe('jslib generator', function () {
       ['package.json', /"name": "lib-n-c-c-0123456789.js"/],
       // main entry file
       ['bower.json', /"main": "dist\/main.js"/],
-      ['package.json', /"main": "dist\/main.js"/],
-    ];
+      ['package.json', /"main": "dist\/main.js"/]
+    ]
 
     helpers.mockPrompt(this.app, {
-      libname: 'lib"·$%&()/\=¿?¡!^`+*ñ¨Ç´ç;,:-_0123456789.js',
-    });
+      libname: 'lib"·$%&()/\=¿?¡!^`+*ñ¨Ç´ç;,:-_0123456789.js'
+    })
 
-    this.app.options['skip-install'] = true;
+    this.app.options['skip-install'] = true
 
     this.app.run(function () {
-      assert.fileContent(expectedContent);
-      done();
-    });
-  });
+      assert.fileContent(expectedContent)
+      done()
+    })
+  })
 
   it('should create valid json files', function (done) {
     helpers.mockPrompt(this.app, {
-      libname: 'lib"·$%&()/\=¿?¡!^`+*ñ¨Ç´ç;,:-_0123456789.js',
-    });
+      libname: 'lib"·$%&()/\=¿?¡!^`+*ñ¨Ç´ç;,:-_0123456789.js'
+    })
 
-    this.app.options['skip-install'] = true;
+    this.app.options['skip-install'] = true
 
     this.app.run(function () {
-      require(path.join(__dirname, 'temp', 'package.json'));
-      require(path.join(__dirname, 'temp', 'bower.json'));
-      require(path.join(__dirname, 'temp', '.jscs.json'));
+      require(path.join(__dirname, 'temp', 'package.json'))
+      require(path.join(__dirname, 'temp', 'bower.json'))
+      require(path.join(__dirname, 'temp', '.jscs.json'))
       // can't require('json like file without ending by .json')
-      var jshint = fs.readFileSync(path.join(__dirname, 'temp', '.jshintrc'), 'utf8');
+      var jshint = fs.readFileSync(path.join(__dirname, 'temp', '.jshintrc'), 'utf8')
       assert.doesNotThrow(function () {
-        JSON.parse(jshint);
-      });
-      done();
-    });
-  });
-});
+        JSON.parse(jshint)
+      })
+      done()
+    })
+  })
+})
