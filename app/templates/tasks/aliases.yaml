@@ -3,9 +3,7 @@ default:
 
 build:
   - clean
-  - jshint:lib
-  - jscs:lib
-  - lintspaces:lib
+  - standard
   - umd
   - concat
   - uglify
