@@ -7,4 +7,4 @@ module.exports = {
     src: ['dist/main.js'],
     dest: 'dist/main.js'
   }
-};
+}

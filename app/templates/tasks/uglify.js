@@ -6,4 +6,4 @@ module.exports = {
     src: '<%= concat.dist.dest %>',
     dest: 'dist/main.min.js'
   }
-};
+}
