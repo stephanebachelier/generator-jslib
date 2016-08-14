@@ -132,12 +132,6 @@ describe('jslib generator', function () {
     this.app.run(function () {
       require(path.join(__dirname, 'temp', 'package.json'))
       require(path.join(__dirname, 'temp', 'bower.json'))
-      require(path.join(__dirname, 'temp', '.jscs.json'))
-      // can't require('json like file without ending by .json')
-      var jshint = fs.readFileSync(path.join(__dirname, 'temp', '.jshintrc'), 'utf8')
-      assert.doesNotThrow(function () {
-        JSON.parse(jshint)
-      })
       done()
     })
   })
