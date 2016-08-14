@@ -1,9 +1,9 @@
 module.exports = {
   options: {
-    banner: '<%%= banner %>'
+    banner: '<%= banner %>'
   },
   dist: {
-    src: '<%%= concat.dist.dest %>',
+    src: '<%= concat.dist.dest %>',
     dest: 'dist/main.min.js'
   }
 };
