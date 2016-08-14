@@ -76,8 +76,6 @@ var JslibGenerator = yeoman.Base.extend({
 
       this.copy('_editorconfig', '.editorconfig')
       this.copy('_gitignore', '.gitignore')
-      this.copy('_jshintrc', '.jshintrc')
-      this.copy('_jscs.json', '.jscs.json')
       this.copy('_travis.yml', '.travis.yml')
 
       // yeah no templating here !

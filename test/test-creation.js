@@ -20,18 +20,15 @@ describe('jslib generator', function () {
   it('creates expected files', function (done) {
     var expected = [
       // add files you expect to exist here.
-      '.jshintrc',
       '.editorconfig',
       '.gitignore',
-      '.jscs.json',
       '.travis.yml',
       'Gruntfile.js',
       'dist',
       'lib/main.js',
       'tasks/aliases.yaml',
       'tasks/concat.js',
-      'tasks/jscs.js',
-      'tasks/jshint.js',
+      'tasks/standard.js',
       'tasks/uglify.js',
       'tasks/watch.js'
     ];
